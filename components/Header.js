@@ -16,7 +16,7 @@ import {
   useColorModeValue,
   Stack,
 } from '@chakra-ui/react';
-import DarkModeSwitch from './DarkModeSwitch';
+import DarkModeSwitch from '../components/DarkModeSwitch'
 import { 
   HamburgerIcon, 
   CloseIcon,

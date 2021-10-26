@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {
     Flex,
     InputGroup,
+		Heading,
     InputLeftElement,
     Input,
     Button,
@@ -29,7 +30,7 @@ const Todo = () => {
     AuthUser.id &&
       firebase
         .firestore()
-        .collection(AuthUser.id)
+        .collection("todos")
         .orderBy('timestamp', 'desc')
         .onSnapshot(snapshot => {
           setTodos(snapshot.docs.map(doc => doc.data().todo))
@@ -41,7 +42,7 @@ const Todo = () => {
       // try to update doc
       firebase
         .firestore()
-        .collection(AuthUser.id) // each user will have their own collection
+        .collection("todos") // each user will have their own collection
         .doc(input) // set the collection name to the input so that we can easily delete it later on
         .set({
           todo: input,
@@ -57,7 +58,7 @@ const Todo = () => {
     try {
       firebase
         .firestore()
-        .collection(AuthUser.id)
+        .collection("todos")
         .doc(t)
         .delete()
         .then(console.log('Data was successfully deleted!'));
@@ -71,7 +72,13 @@ const Todo = () => {
       <Header 
         email={AuthUser.email} 
         signOut={AuthUser.signOut} />
-      <Flex flexDir="column" maxW={800} align="center" justify="start" minH="100vh" m="auto" px={4} py={3}>
+
+            <Flex flexDir="column" maxW={800} align="center" justify="start" minH="100vh" m="auto" px={4} py={30}>
+						<Flex justify="space-between" w="100%" align="center">
+                <Heading mb={4}>Welcome To Todos, {AuthUser.email}! </Heading>
+            </Flex>
+            
+        
         <InputGroup>
           <InputLeftElement
             pointerEvents="none"

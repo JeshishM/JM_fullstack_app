@@ -17,7 +17,7 @@ const Home = () => {
       <Header 
         email={AuthUser.email} 
         signOut={AuthUser.signOut} />
-      <Box p={4}>Example Personal Digital Assistant App</Box>
+      <Box p={4}>Hello {AuthUser.email}!! This is my Personal Digital Assistant App</Box>
     </>
   );
 }

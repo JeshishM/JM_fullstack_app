@@ -92,6 +92,9 @@ const Event = () => {
         email={AuthUser.email} 
         signOut={AuthUser.signOut} />
       <Flex flexDir="column" maxW={800} align="center" justify="start" minH="100vh" m="auto" px={4} py={3}>
+      <Flex justify="space-between" w="100%" align="center">
+                <Heading mb={4}>Welcome To Event, {AuthUser.email}!</Heading>
+            </Flex>
         <InputGroup>
           <InputLeftElement
             pointerEvents="none"
@@ -151,3 +154,4 @@ export default withAuthUser({
   whenUnauthedAfterInit: AuthAction.REDIRECT_TO_LOGIN,
   whenUnauthedBeforeInit: AuthAction.REDIRECT_TO_LOGIN,
 })(Event)
+

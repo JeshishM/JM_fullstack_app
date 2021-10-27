@@ -116,7 +116,7 @@ const Contact = () => {
         email={AuthUser.email} 
         signOut={AuthUser.signOut} />
         
-        <Flex flexDir="column" maxW={800} align="center" justify="start" minH="100vh" m="auto" px={4} py={3}>
+        <Flex flexDir="column" maxW={800} align="center" justify="start" minH="100vh" m="auto" px={4}>
             <Flex justify="space-between" w="100%" align="center">
                 <Heading mb={4}>Welcome To Contact, {AuthUser.email}!</Heading>
             </Flex>

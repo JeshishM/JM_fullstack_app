@@ -8,12 +8,12 @@ import FirebaseAuth from '../components/FirebaseAuth'
 
 const styles = {
   content: {
-    padding: `8px 32px`,
+    padding: `8px 50px`,
   },
   textContainer: {
     display: 'flex',
     justifyContent: 'center',
-    margin: 16,
+    margin: 25,
   },
 }
 
